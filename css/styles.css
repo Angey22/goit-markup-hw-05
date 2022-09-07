@@ -1,0 +1,633 @@
+/* Palette of colors */
+/* Maine page background color -  #FFF */
+/* Secondary page background color - #F5F4FA */
+/* Complementary page background color - #2F303A */
+    /* Maine text color - #757575 */
+    /* Secondary text color - #212121 */
+    /* Complementary text color - #FFF */
+    /* Accent text color - #2196F3 */
+    /* Individual color of some text in footer - rgba(255, 255, 255, 0.6) */
+
+/* Create custom CSS properties to set Background and Text colors */
+:root {
+    --maine-background-color: #FFF;
+    --secondary-background-color: #F5F4FA;
+    --complementary-background-color: #2F303A;
+    --maine-text-color: #757575;
+    --secondary-text-color: #212121;
+    --complementary-text-color: #FFF;
+    --accent-text-color: #2196F3;
+    --individual-text-color: rgba(255, 255, 255, 0.6);
+    --logo-dicor-color: #000;
+    --portfolio-card-border-color: #EEEEEE;
+    --portfolio-card-set-gap: 30px;
+}
+
+/* Reset indentation settings in a tag group */
+h1, h2, h3, h4, h5, h6, ul, p {
+padding: 0;
+margin: 0;
+}
+
+/* Service setting of geometry rules for all images */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Utility class for resetting settings lists*/
+.list {
+    list-style: none;
+}
+
+/* Utility class for resetting settings links &  adding an accent color on hover and focus of the corresponding links */
+.link {
+    text-decoration: none;
+}
+    .link:hover,
+    .link:focus {
+        color: var(--accent-text-color);
+    }
+
+/* Utility class that hides the display of headings from the user, but remains they visible to search engines */
+.visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
+/* Common body parameters of all site pages */
+body {
+    background: var(--maine-background-color);
+    color: var(--maine-text-color);
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.03em;
+}
+
+/* Website logo */
+.logo {
+    /* Geometri */
+    display: inline-block;
+
+    /* Text */
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 26px;
+    line-height: 1.2;
+    color: var(--accent-text-color);
+}
+    .logo-second-half-head {
+        /* Text */
+        color: var(--logo-dicor-color);
+        /* Geometri */
+        display: inline-block;
+        margin-right: 93px;
+    }
+    .logo-second-half-foot {
+        /* Text */
+        color: var(--complementary-text-color);
+        /* Geometri */
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+.header {
+    border-bottom: 1px solid #ECECEC;
+}
+
+/* General header options */
+.header-container {
+    /* Geometry */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Site navigation */
+.page-nav {
+    /* Geometry */
+    display: flex;
+    align-items: center;
+}
+/* Site navigation & Hed contacts*/
+.nav-list,
+.contacts-head-list {
+    /* Geometry */
+    display: flex;
+}
+
+.nav-list-itm:not(:last-child) {
+    /* Geometry */
+    margin-right: 50px;
+}
+
+.site-nav-link {
+    /* Geometry */
+    display: block;
+    padding: 32px 0;
+
+    /* Text */
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: var(--secondary-text-color);
+}
+    /* Additional interactive effect */
+    .site-nav-link:hover,
+    .site-nav-link:focus {
+        /* Geometry */
+        border-bottom: 4px solid var(--accent-text-color);
+        border-radius: 2px;
+        padding: 32px 0 28px 0;
+    }
+
+/* Utility class for simulating the display of the current position on site in the site menu */
+.current-position {
+    color: var(--accent-text-color);
+}
+
+.contacts-head-itm:not(:last-child) {
+    /* Geometry */
+    margin-right: 30px;
+}
+
+/* Contact information */
+.contacts-head-link {
+    /* Geometry */
+    display: flex; /* ??? */
+    align-items: center; /* ??? */
+    
+    /* Text */
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: var(--maine-text-color);  
+    
+    /* for SVG icon with id: 'icon-envelope' & 'icon-smartphone'  */
+    fill: currentColor; /* ??? */
+}
+
+    .contacts-head-text {
+        /* Geometry */
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+.contacts-foot, .contacts-map {
+    /* Text */
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--individual-text-color);
+}
+
+.contacts-map {
+    /* Text */
+    color: var(--complementary-text-color);
+}
+
+/* Підвал */
+.footer {
+    /* Geometry */
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    /* Decor */
+    background-color: var(--complementary-background-color);
+}
+
+.footer-container {
+    /* Geometry */
+    display: flex;
+    align-items: flex-start;
+}
+
+.footer-start {
+    /* Geometry */
+    margin-right: 70px;
+}
+
+.footer-list {
+    /* Geometry */
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-list-item:not(:last-child) {
+    /* Geometry */
+    margin-bottom: 9px;
+}
+
+.footer-social-block {
+    padding-top: 12px;
+}
+
+.social-list {
+    /* Geometry */
+    display: flex;
+    justify-content: center;
+}
+
+.social-list-title {
+    /* Geometry */
+    margin-bottom: 20px;
+
+    /* Text */
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    color: var(--complementary-text-color);
+}
+
+.social-list-item:not(:last-child) {
+    /* Geometry */
+    margin-right: 10px;
+}
+
+.social-list-link {
+    /* Icons location setting */
+    display: flex;
+    justify-content: center; /* + */
+    align-items: center; /* + */
+
+    /* Link geometry */
+    width: 44px; /* + */
+    height: 44px; /* + */
+    border-radius: 50%; /* + */
+}
+
+.social-link-footer {
+    background-color: rgba(255, 255, 255, 0.1); /* + */
+    /* for SVG icon with id: 'icon-instagram'; 'icon-twitter'; 'icon-facebook'; 'icon-linkedin; */
+    fill: var(--complementary-text-color); /* ??? */
+}
+
+.social-link-footer:hover,
+.social-link-footer:focus {
+    background-color: var(--accent-text-color); /* ??? */
+}
+
+.social-link-team {
+    /* for SVG icon with id: 'icon-instagram'; 'icon-twitter'; 'icon-facebook'; 'icon-linkedin; */
+    fill: #AFB1B8; /* ??? */
+}
+
+.social-link-team:hover,
+.social-link-team:focus {
+    background-color: var(--accent-text-color); /* ??? */
+    /* for SVG icon with id: 'icon-instagram'; 'icon-twitter'; 'icon-facebook'; 'icon-linkedin; */
+    fill: #fff; /* ??? */
+}
+
+/* Шапка - "Hero" */
+.hero {
+    /* Geomeetry */
+    padding-top: 200px;
+    padding-bottom: 200px;
+    text-align: center;
+    max-height: 600px;
+    max-width: 1600px;
+    margin: 0 auto;
+    
+    /* Decor */
+    background-color: #C4C4C4; /* + */
+    background-image:  linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero_background_image_o.jpg); /* + */
+    background-repeat: no-repeat; /* + */
+    background-position: center; /* + */
+    background-size: cover; /* ??? */
+}
+    .hero-title {
+        /* Geometry */
+        margin-bottom: 30px;
+
+        /* Text */
+        font-weight: 900;
+        font-size: 44px;
+        line-height: 1.4;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--complementary-text-color);
+}
+
+    .herro-button {
+        /* Button interactivity settings */
+        cursor: pointer;
+        
+        /* Button geometry */
+        display: inline-block;
+        border: 1px solid transparent;
+        background: var(--accent-text-color);        
+        border-radius: 4px;
+        border: none;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+        padding: 10px 32px;
+        min-width: 216px; 
+        min-height: 50px;
+        
+        /* Button text */
+        font-family: inherit;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.9;
+        text-align: center;
+        letter-spacing: 0.06em;
+        color: var(--complementary-text-color);
+    }
+        /* Interactivity of changing the appearance of herro-button */
+        .herro-button:hover,
+        .herro-button:focus {
+        background-color: #188CE8;
+        border: none;
+        }
+
+/* General settings for "sections" of all pages of the site */
+.section-highlighted {
+    /* Decor */
+    background-color: var(--secondary-background-color);
+}
+
+.section-title {
+    /* Geometry */
+    margin-bottom: 50px; /* Bottom padding for h2 section headers */
+
+    /* Text */
+    text-align: center;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.2;
+    color: var(--secondary-text-color);   
+}
+
+/* Geometri settings of the ".container" auxiliary class,
+intended for centering and limiting the content of site elements in width. */
+.container {
+    /* Geometry */
+    max-width: 1200px;
+    padding: 94px 15px 94px 15px;
+    margin: 0 auto 0 auto;
+}
+
+.container-vert-padding-none {
+    /* Geometry */
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.conteainer-peculiarities {
+    padding-bottom: 47px;
+}
+
+.container-work {
+    padding-top: 47px;
+}
+
+/* Особливості - "Peculiarities", section on page index.html */
+.peculiarities-list {
+    /* Geometry */
+    display: flex;
+}
+
+.peculiarities-list-itm {
+    /* Geometry */
+    max-width: 270px;
+}
+    /* Cleaning up the geometry */
+    .peculiarities-list-itm:not(:last-child) {
+        /* Geometry */
+        margin-right: 30px;
+    }
+
+/* Decorative background & location setting of icons with id: 'icon-antenna'; 'icon-clock'; 'icon-diagram'; 'icon-astronaut' */
+.peculiarities-list-decor {
+    /* Background geometry */
+    display: flex; /* + */
+    height: 120px; /* + */
+    border-radius: 4px; /* + */
+    margin-bottom: 30px; /* + */
+    
+    /* Icons location setting */
+    justify-content: center; /* + */
+    align-items: center; /* + */
+    
+    /* Background decoration */
+    background-color: var(--secondary-background-color); /* + */
+}
+
+.peculiarities-list-title {
+    /* Geometry */
+    margin-bottom: 10px;
+
+    /* Text */
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    color: var(--secondary-text-color);  
+}
+
+.peculiarities-list-text {
+    /* Text */
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Чим ми займаємося, section on page index.html */
+.work-list {
+    /* Geometry */
+    display: flex;
+    justify-content: center;
+}
+
+.work-list-itm:not(:last-child) {
+    /* Geometry */
+    margin-right: 30px;
+}
+
+/* Наша команда, section on page index.html */
+.team-list {
+    display: flex;
+    justify-content: center;
+}
+.team-list-item {
+    /* Geometry */
+    text-align: center;
+    padding-bottom: 30px;
+    
+    /* Decor */
+    background: var(--complementary-text-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+}
+
+.team-list-item:not(:last-child) {
+    /* Geometry */
+    margin-right: 30px;
+}
+
+.team-list-img {
+    /* Geometry */
+    margin-bottom: 30px;
+}
+
+.team-name {
+    /* Geometry */
+    margin-bottom: 10px;
+
+    /* Text */
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.2;
+    color: var(--secondary-text-color);    
+}
+
+.team-position {
+    /* Geometry */
+    margin-bottom: 16px;
+
+    /* Text */
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+/* Постійні клієнти, section on page index.html */
+.client-list {
+    /* Geometry */
+    display: flex;
+}
+
+.client-list-item:not(:last-child) {
+    /* Geometry */
+    margin-right: 30px;
+}
+
+.client-list-link {
+    /* Icons location setting */
+    display: flex;
+    justify-content: center; /* + */
+    align-items: center; /* + */
+    
+    /* Decor general setting */
+    color: #AFB1B8;
+    
+    /* Link geometry */
+    width: 170px;
+    height: 92px;
+    border: 1px solid currentColor; /* + */
+    border-radius: 4px;
+
+    /* for SVG icon with id: 'icon-client_logo_1'...'icon-client_logo_6' */
+    fill: currentColor; /* ??? */
+}
+
+/* Наші роботи, section in main on page portfolio.html*/
+/* Settings of filter buttons */
+.portfolio-filter {
+    /* Geometry */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.portfolio-filter-itm:not(:last-child) {
+    /* Geometri */
+    padding-right: 8px;
+}
+
+.portfolio-filter-button {
+    /* Button interactivity settings */
+    cursor: pointer;
+    
+    /* Button geometry */
+    display: block;
+    border: 1px solid transparent;
+    background: var(--secondary-background-color);
+    border: none;
+    border-radius: 4px;
+    padding: 6px 22px;
+    
+    /* Button text */
+    color: var(--secondary-text-color);
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+    .first-portfolio-filter-button {
+        /* Button geometry */
+        padding: 6px 25px;
+    }
+
+    /* Interactivity of changing the appearance of portfolio-buttons */
+        .portfolio-filter-button:hover,
+        .portfolio-filter-button:focus {
+        background-color: var(--accent-text-color); /* + */
+        color: var(--complementary-text-color); /* + */
+        box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12); /* + */
+        border-radius: 4px; /* + */
+        }
+
+/* General geometry parameters of the section with cards - portfolio */
+.portfolio {
+    /* Geometry */
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--portfolio-card-set-gap));
+    margin-left: calc(-1 * var(--portfolio-card-set-gap));
+}
+
+.portfolio-itm {
+    /* Geometry */
+    flex-basis: calc(100% / 3 - var(--portfolio-card-set-gap));
+    margin-top: var(--portfolio-card-set-gap);
+    margin-left: var(--portfolio-card-set-gap);
+}
+
+    .portfolio-itm:hover {
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16); /* + */
+    }
+
+.portfolio-link {
+    text-decoration: none;
+}
+
+.portfolio-card-content {
+    /* Geometry */
+    padding: 20px 24px;
+    
+    /* Decor */
+    border-right: 1px solid var(--portfolio-card-border-color);
+    border-left: 1px solid var(--portfolio-card-border-color);
+    border-bottom: 1px solid var(--portfolio-card-border-color);
+}
+
+.portfolio-card-title {
+    /* Geometry */
+    margin-bottom: 4px;
+    
+    /* Text */
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    color: var(--secondary-text-color);
+}
+
+.portfolio-card-text {
+    /* Text */
+    font-size: 16px;
+    line-height: 1.9;
+    color: var(--maine-text-color);
+}

@@ -21,6 +21,7 @@
     --logo-dicor-color: #000;
     --portfolio-card-border-color: #EEEEEE;
     --portfolio-card-set-gap: 30px;
+    --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Reset indentation settings in a tag group */
@@ -103,9 +104,17 @@ body {
     border-bottom: 1px solid #ECECEC;
     
     /* Animation effect for 'header' while scrolling */
-    position: sticky; /* !!! */
-    top: 0; /* !!! */
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
     background-color: var(--maine-background-color); /* !!! */
+    
+    /* position: fixed; */
+        /* top: 0; */
+        /* left: 0; */
+        /* right: 0; */
+        /* z-index: 20; */
 }
 
 /* General header options */
@@ -532,10 +541,89 @@ intended for centering and limiting the content of site elements in width. */
     border-radius: 4px;
 
     /* for SVG icon with id: 'icon-client_logo_1'...'icon-client_logo_6' */
-    fill: currentColor; /* ??? */
+    fill: currentColor;
 }
 
-/* Наші роботи, section in main on page portfolio.html*/
+/* Setings of 'Modal-Window', in page index.html */
+.backdrop {
+    /* Position */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+
+    /* Decor */
+    background: rgba(0, 0, 0, 0.2);
+
+}
+
+.backdrop.is-hidden {
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-window {
+    /* Position */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* Geometry */
+    width: 530px;
+    height: 580px;
+    border-radius: 4px;
+    padding: 40px;
+
+    /* Decor */
+    background-color: var(--maine-background-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+        
+}
+
+.modal-window-close-btn {
+    /* Position */
+/* Position */
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    /* Geometry */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+
+    /* Decor */
+    background: var(--maine-background-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #000;
+
+    /* Effects */
+    cursor: pointer;
+
+    /* for SVG icon with id: 'icon-cloe-black-cross' */
+    fill: currentColor;
+
+    /* Animation execution options */
+    transition: color 250ms var(--timing-function);
+}
+
+.modal-window-title {
+    /* Text */
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    color: var(--secondary-text-color);
+}
+
+/* Наші роботи, section in 'main' on page portfolio.html */
 /* Settings of filter buttons */
 .portfolio-filter {
     /* Geometry */
@@ -550,13 +638,10 @@ intended for centering and limiting the content of site elements in width. */
 }
 
 .portfolio-filter-button {
-    /* Button interactivity settings */
-    cursor: pointer;
-    
     /* Button geometry */
     display: block;
     border: 1px solid transparent;
-    background: var(--secondary-background-color);
+    background-color: var(--secondary-background-color);
     border: none;
     border-radius: 4px;
     padding: 6px 22px;
@@ -568,6 +653,12 @@ intended for centering and limiting the content of site elements in width. */
     font-size: 16px;
     line-height: 1.6;
     text-align: center;
+
+    /* Button interactivity settings */
+    cursor: pointer;
+
+    /* Animation execution options */
+    transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function), box-shadow 250ms var(--timing-function);
 }
 
     .first-portfolio-filter-button {
@@ -575,13 +666,12 @@ intended for centering and limiting the content of site elements in width. */
         padding: 6px 25px;
     }
 
-    /* Interactivity of changing the appearance of portfolio-buttons */
+    /* Rules for activating animation effects of an element with the ".portfolio-filter-button" class */
         .portfolio-filter-button:hover,
         .portfolio-filter-button:focus {
-        background-color: var(--accent-text-color); /* + */
-        color: var(--complementary-text-color); /* + */
-        box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12); /* + */
-        border-radius: 4px; /* + */
+        background-color: var(--accent-text-color);
+        color: var(--complementary-text-color);
+        box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
         }
 
 /* General geometry parameters of the section with cards - portfolio */
@@ -598,15 +688,19 @@ intended for centering and limiting the content of site elements in width. */
     flex-basis: calc(100% / 3 - var(--portfolio-card-set-gap));
     margin-top: var(--portfolio-card-set-gap);
     margin-left: var(--portfolio-card-set-gap);
-}
 
+    /* Animation execution options */
+    transition: box-shadow 250ms var(--timing-function);
+}
+    /* Rules for activating animation effects of an element with the ".portfolio-itm" class */
     .portfolio-itm:hover {
         box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
     }
-        /* Правило активации анимации невидемого по умолчанию "оверлея"*/
-        .portfolio-itm:hover .portfolio-card-overlay {
-            transform: translateY(0);
-        }
+
+    .portfolio-itm:hover .portfolio-card-overlay,
+    .portfolio-itm:focus-within .portfolio-card-overlay {
+        transform: translateY(0);
+    }
 
 .portfolio-link {
     text-decoration: none;
@@ -642,26 +736,31 @@ intended for centering and limiting the content of site elements in width. */
 }
 
 .portfolio-card-tumb{
+    /* Position */
     position: relative;
     overflow: hidden;
-    z-index: -1; /* Для нормализации вида при скроллинге хедера*/
 }
 
 .portfolio-card-overlay {
-    position: absolute; 
+    /* Position */
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
 
+    /* Geometry */
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 63px 24px;
     background-color: rgba(33, 150, 243, 0.9);
 
+    /* Animation settings */
     transform: translateY(100%);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Animation execution options */
+    transition: transform 250ms var(--timing-function);
 }
 
 .portfolio-card-overlay-text {

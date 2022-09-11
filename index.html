@@ -56,7 +56,7 @@
         <section class="hero">
             <div class="container container-vert-padding-none">
                 <h1 class="hero-title">Ефективні рішення для<br>вашого бізнесу</h1>
-                <button class="herro-button" type="button">Замовити послугу</button>
+                <button class="herro-button" type="button" data-modal-open>Замовити послугу</button>
             </div>
         </section>
         
@@ -438,6 +438,20 @@
             </div>
         </div>
     </footer>
-    
+
+    <!-- Markup modal window -->
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal-window"> 
+            <button  class="modal-window-close-btn link" data-modal-close>
+                <svg width="18px" height="18px">
+                    <use href="./images/icons.svg#icon-cloe-black-cross"></use>
+                </svg>
+            </button>
+            <h1 class="modal-window-title">Залиште свої дані, ми вам передзвонимо</h1>
+        </div>
+    </div>
+
+    <!-- Connecting to the page an external file with JS code for the modal window -->
+    <script src="./js/modal.js"></script>
 </body>
 </html>
